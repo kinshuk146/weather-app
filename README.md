@@ -22,7 +22,7 @@ This is a responsive weather forecast application built using React.js. The app 
 ### `Features`
 
 ### `City Search`:
-Users can search for weather information by entering the name of a city.
+Users can search for weather information by entering the name of a city. User can either select from dropdown or enter a city manually.
 The app uses the OpenWeatherMap Geocoding API to retrieve the geographical coordinates (latitude and longitude) of the city.
 
 ### `Current Weather Information`:
@@ -43,5 +43,7 @@ If the user’s city was previously searched, the app retrieves the data from lo
 ### `Loading Indicators`:
 Displays a loading spinner when fetching data to improve the user experience during API calls.
 
+### `Assumptions`:
+Stored an array of cities and filtered those cities based on the users input. If city is not found in the stored list the user has a choice to enter the city manually and check weather.
 
 
