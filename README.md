@@ -46,4 +46,12 @@ Displays a loading spinner when fetching data to improve the user experience dur
 ### `Assumptions`:
 Stored an array of cities and filtered those cities based on the users input. If city is not found in the stored list the user has a choice to enter the city manually and check weather.
 
+## Workflow:
+First the application loads the weather information for a default city (New York). The application displays the weather for the current day and next five days. Now to change the city I click on the input 'Enter a city' which opens a modal with a dropdown. Now once the user starts entering a value in the input cities will get filtered accordingly from the dropdown. Now if the user is able to find the city from the dropdown the user may click on the city in the dropdown. If not the user can continue typing the complete city name and press search. If the city name entered by the user is valid the weather for that city will show up. If not approprate error handling has been done.
+
+If the internet suddenly disconnects the application will display the weather for the latest city stored in localStorage on reload. Caching has been implemented to store the weather data for the last city in localStorage. Considering another case where I initally don't have an internet connection and I start the application, I won't be able to search any city and appropriate error handling has been done. 
+
+A spinning loader has been implented. Whenever an api call is being made and the result hasn't been retrieved from the server a spinner is rotating. Pull to refresh has also been implemented for mobile devices. On pulling the application downwards a refresh is initiated.
+
+
 
