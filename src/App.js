@@ -8,7 +8,7 @@ import './App.css'
 import { ImSpinner11 } from "react-icons/im";
 
 function App() {
-
+  const weather_api_key = process.env.REACT_APP_OPEN_WEATHER_API_KEY;
   const [weatherState, setWeatherState] = useState({
     unit: 'Celsius',
     currentCity: 'New York',
@@ -68,7 +68,7 @@ function App() {
   const getGeoLocation = async () => {
     try {
       const res = await axios.get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=848e5dc23fd442d058ef29845d24fb58`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${weather_api_key}`
       );
       if (res.data.length > 0) {
         setWeatherState((prevState) => ({
@@ -91,7 +91,7 @@ function App() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${weatherState.latitude}&lon=${weatherState.longitude}&exclude=hourly,minutely&APPID=848e5dc23fd442d058ef29845d24fb58`
+        const res = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${weatherState.latitude}&lon=${weatherState.longitude}&exclude=hourly,minutely&APPID=${weather_api_key}`
         );
         if (res.data) {
           setLoading(false);
