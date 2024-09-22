@@ -5,11 +5,11 @@
     align-items: center;
     justify-content: center;
     color: white;
-    border-radius: 10%;
+    border-radius: 20px;
     padding-left: 30px;
     padding-right: 30px;
-    min-height: 250px;
-    min-width: 250px;
+    /* min-height: 250px;
+    min-width: 250px; */
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -44,12 +44,24 @@
     color:#60b4ec;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 700px) {
     .city-header{
         font-size: 1.5rem;
         margin-left: 1rem;
     }
     .weather-info-block{
-        max-width: 175px;
+        /* max-width: 175px; */
+    }
+    .weather-info-block h2{
+        font-size: 1rem;
+    }
+    
+    .weather-info-block h4{
+        font-size: 0.75rem;
+    }
+    
+    .weather-info-block p{
+        margin-top: -1rem;
+        font-size: 1.5rem;
     }
   }
