@@ -1,0 +1,25 @@
+.ForeCastCardComponent{
+    background-color: rgb(165, 188, 250);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: 2px solid white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 2px;
+}
+
+.ForeCastCardComponent p:first-child{
+    /* border-bottom: 1px solid black; */
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+    .ForeCastCardComponent{
+        font-size: 10px;
+    }
+  }
+

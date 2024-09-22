@@ -1,0 +1,35 @@
+.single{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.single:hover{
+    cursor:pointer;
+    background-color:antiquewhite;
+
+}
+
+.dropdown-container{
+    position: relative;
+}
+
+.dropdown{
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.dropdown-input{
+    padding: 8px 16px; 
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+

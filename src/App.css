@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color:#f0fcfc;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap:20px;
+}
+
+@media only screen and (max-width: 449px) {
+  /* For desktop: */
+  .col-xs-1 {width: 8.33%;}
+  .col-xs-2 {width: 16.66%;}
+  .col-xs-3 {width: 25%;}
+  .col-xs-4 {width: 33.33%;}
+  .col-xs-5 {width: 41.66%;}
+  .col-xs-6 {width: 50%;}
+  .col-xs-7 {width: 58.33%;}
+  .col-xs-8 {width: 66.66%;}
+  .col-xs-9 {width: 75%;}
+  .col-xs-10 {width: 83.33%;}
+  .col-xs-11 {width: 91.66%;}
+  .col-xs-12 {width: 100%;}
+}
+
+
+@media only screen and (min-width: 450px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 1200px) {
+  /* For desktop: */
+  .col-l-1 {width: 8.33%;}
+  .col-l-2 {width: 16.66%;}
+  .col-l-3 {width: 25%;}
+  .col-l-4 {width: 33.33%;}
+  .col-l-5 {width: 41.66%;}
+  .col-l-6 {width: 50%;}
+  .col-l-7 {width: 58.33%;}
+  .col-l-8 {width: 66.66%;}
+  .col-l-9 {width: 75%;}
+  .col-l-10 {width: 83.33%;}
+  .col-l-11 {width: 91.66%;}
+  .col-l-12 {width: 100%;}
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.ForecastCardContainer{
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-element{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
+.search-element button{
+  padding: 8px 16px; 
+}
+
+.toggle-temp{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:20px;
+  /* position: relative; */
+}
+
+.toggle-temp p{
+  margin-top: 2rem;
+}
+
+
+.App-Container {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Full screen height */
+}
+
+.loading-icon {
+  color: teal;
+  font-size: 6rem;
+  animation: animate 1s infinite linear;
+  position: absolute;
+  top: 10vh;
+  left:45%;
+  z-index: 1;
+}
+
+@keyframes animate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+}
+
+/* <!-- HTML !-->
+<button class="button-2" role="button">Button 2</button> */
+
+/* CSS */
+.button-2 {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
