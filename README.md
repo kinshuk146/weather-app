@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Getting Started with Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Clone the project and navigate to the project directory
 
-## Available Scripts
+## Install dependencies
 
-In the project directory, you can run:
+Make sure node is installed on your system. Run the command:
+
+### `npm install`
+
+To start the project navigate to the project directory, and run:
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Details of application
 
-### `npm test`
+This is a responsive weather forecast application built using React.js. The app fetches real-time weather data from the OpenWeatherMap API and provides current and 5-day forecasts for different cities. Key features of the application include:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Features`
 
-### `npm run build`
+### `City Search`:
+Users can search for weather information by entering the name of a city. User can either select from dropdown or enter a city manually.
+The app uses the OpenWeatherMap Geocoding API to retrieve the geographical coordinates (latitude and longitude) of the city.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Current Weather Information`:
+Displays the current weather conditions based on the selected city.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `5-Day Weather Forecast`:
+Provides a 5-day forecast showing essential weather details like temperature and weather conditions for each day.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Unit Switching (Celsius/Fahrenheit)`:
+Users can toggle between Celsius and Fahrenheit for temperature units using a switch component.
 
-### `npm run eject`
+### `Pull-to-Refresh`:
+Supports a pull-to-refresh mechanism on mobile devices, allowing users to refresh the weather data by pulling down on the screen.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `Offline Storage`:
+If the user’s city was previously searched, the app retrieves the data from localStorage to minimize unnecessary API calls and improve performance when offline.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Loading Indicators`:
+Displays a loading spinner when fetching data to improve the user experience during API calls.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `Assumptions`:
+Stored an array of cities and filtered those cities based on the users input. If city is not found in the stored list the user has a choice to enter the city manually and check weather.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Workflow:
+First the application loads the weather information for a default city (New York). The application displays the weather for the current day and next five days. Now to change the city I click on the input 'Enter a city' which opens a modal with a dropdown. Now once the user starts entering a value in the input cities will get filtered accordingly from the dropdown. Now if the user is able to find the city from the dropdown the user may click on the city in the dropdown. If not the user can continue typing the complete city name and press search. If the city name entered by the user is valid the weather for that city will show up. If not approprate error handling has been done.
 
-## Learn More
+If the internet suddenly disconnects the application will display the weather for the latest city stored in localStorage on reload. Caching has been implemented to store the weather data for the last city in localStorage. Considering another case where I initally don't have an internet connection and I start the application, I won't be able to search any city and appropriate error handling has been done. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A spinning loader has been implented. Whenever an api call is being made and the result hasn't been retrieved from the server a spinner is rotating. Pull to refresh has also been implemented for mobile devices. On pulling the application downwards a refresh is initiated.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
